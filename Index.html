@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuestionario - Capítulo 3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Portada inicial -->
+    <div class="cover-container" id="cover-container">
+      <h1>Cuestionario 3: El componente sintáctico</h1>
+      <img id="poratada-image" src="goat.jpg" alt="Imagen de la pregunta" width="450" height="450">
+      <button id="start-btn">Comenzar</button>
+    </div>
+    <!-- Formulario de nombre -->
+    <div class="name-container" id="name-container" style="display: none;">
+      <h2>Por favor ingresa tu nombre</h2>
+      <input type="text" id="user-name" placeholder="Tu nombre aquí" required>
+      <button id="submit-name">Continuar</button>
+    </div>    
+    <!-- Contenedor de preguntas -->
+    <div class="question-container" id="question-container" style="display: none;">
+      <h2 id="question-text">Pregunta aquí</h2>
+      <img id="question-image" src="" alt="Imagen de la pregunta" width="600" height="300">
+      <div class="answers" id="answer-buttons">
+      </div>
+      <button id="next-btn">Siguiente</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
