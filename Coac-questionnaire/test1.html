@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuestionario - Capítulo 3</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .slide.active {
+      display: flex;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    .matching-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    select {
+      margin-left: 10px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 300px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide active" id="slide-0">
+    <h1>Capítulo 3: El componente sintáctico</h1>
+    <button onclick="nextSlide()">Comenzar</button>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <h2>c</h2>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+  </div>
+
+  <div class="slide" id="slide-2">
+    <h2>Relaciona los conceptos con sus definiciones</h2>
+    <div class="matching-container">
+      <div class="column">
+        <label>Sintagma nominal</label>
+        <label>Núcleo</label>
+        <label>Constituyente</label>
+        <label>Jerarquía</label>
+      </div>
+      <div class="column">
+        <select id="pregunta1"><option value="">Selecciona</option><option value="Funcion">Función que cumple el sustantivo dentro de una oración</option><option value="Elemento">Elemento principal de un sintagma</option><option value="Unidad">Unidad sintáctica mayor a la palabra</option><option value="Organizacion">Organización en niveles de los constituyentes</option></select>
+        <select id="pregunta2"><option value="">Selecciona</option><option value="Elemento">Elemento principal de un sintagma</option><option value="Funcion">Función que cumple el sustantivo dentro de una oración</option><option value="Unidad">Unidad sintáctica mayor a la palabra</option><option value="Organizacion">Organización en niveles de los constituyentes</option></select>
+        <select id="pregunta3"><option value="">Selecciona</option><option value="Unidad">Unidad sintáctica mayor a la palabra</option><option value="Organizacion">Organización en niveles de los constituyentes</option><option value="Funcion">Función que cumple el sustantivo dentro de una oración</option><option value="Elemento">Elemento principal de un sintagma</option></select>
+        <select id="pregunta4"><option value="">Selecciona</option><option value="Organizacion">Organización en niveles de los constituyentes</option><option value="Unidad">Unidad sintáctica mayor a la palabra</option><option value="Funcion">Función que cumple el sustantivo dentro de una oración</option><option value="Elemento">Elemento principal de un sintagma</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" id="slide-3">
+    <h2>¿Qué oración ejemplifica un sintagma verbal?</h2>
+    <label><input type="radio" name="p3" value="El niño juega"> El niño juega</label><br>
+    <label><input type="radio" name="p3" value="El perro del vecino"> El perro del vecino</label><br>
+    <label><input type="radio" name="p3" value="Con mucha energía"> Con mucha energía</label>
+  </div>
+
+  <div class="slide" id="slide-final">
+    <h2>¡Gracias por completar el cuestionario!</h2>
+    <p>Tu respuesta ha sido registrada.</p>
+  </div>
+
+  <div class="buttons" id="navigation" style="display: none;">
+    <button id="back" onclick="prevSlide()">Atrás</button>
+    <button id="next" onclick="nextSlide()">Siguiente</button>
+    <button id="submit" onclick="guardarRespuestasFirebase()" style="display: none;">Finalizar</button>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js"></script>
+  
+  <script>
+    // 1. Primero las funciones básicas de navegación
+    let currentSlide = 0;
+    const totalSlides = 4; // Cambiado a 4 porque los slides van de 0 a 3
+
+    function showSlide(index) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      const slide = document.getElementById(`slide-${index}`);
+      if (slide) {
+        slide.classList.add('active');
+      }
+      
+      const nav = document.getElementById('navigation');
+      if (index === 0) {
+        nav.style.display = 'none';
+      } else {
+        nav.style.display = 'flex';
+        document.getElementById('back').style.display = index === 1 ? 'none' : 'inline-block';
+        document.getElementById('next').style.display = index < totalSlides - 1 ? 'inline-block' : 'none';
+        document.getElementById('submit').style.display = index === totalSlides - 1 ? 'inline-block' : 'none';
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide === 1) {
+        // Validar nombre antes de avanzar
+        const nombre = document.getElementById('nombre').value;
+        if (!nombre || nombre.trim() === "") {
+          alert("Por favor ingresa tu nombre.");
+          return;
+        }
+      }
+      
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    // 2. Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8hbnZjB5tmdpwAB5D_2CRjXFeKVgE5VA",
+      authDomain: "coac-questionnaire.firebaseapp.com",
+      projectId: "coac-questionnaire",
+      storageBucket: "coac-questionnaire.appspot.com",
+      messagingSenderId: "557896707656",
+      appId: "1:557896707656:web:130f1abcbb459e470d327d"
+    };
+
+    // Inicializar Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // 3. Funciones para manejar las respuestas
+    function obtenerRespuestas() {
+      return {
+        nombre: document.getElementById('nombre').value,
+        respuestas: {
+          pregunta1: document.getElementById('pregunta1').value,
+          pregunta2: document.getElementById('pregunta2').value,
+          pregunta3: document.getElementById('pregunta3').value,
+          pregunta4: document.getElementById('pregunta4').value,
+          pregunta5: document.querySelector('input[name="p3"]:checked')?.value || null
+        },
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      };
+    }
+
+    async function guardarRespuestasFirebase() {
+      // Obtener todas las respuestas
+      const respuestas = {
+        nombre: document.getElementById('nombre').value,
+        pregunta1: document.getElementById('pregunta1').value,
+        pregunta2: document.getElementById('pregunta2').value,
+        pregunta3: document.getElementById('pregunta3').value,
+        pregunta4: document.getElementById('pregunta4').value,
+        pregunta5: document.querySelector('input[name="p3"]:checked')?.value || 'No respondida',
+        timestamp: new Date()
+      };
+
+      // Validar que todas las preguntas estén respondidas
+      if (!respuestas.nombre || respuestas.nombre.trim() === "") {
+        alert("Por favor ingresa tu nombre.");
+        showSlide(1);
+        return;
+      }
+
+      if (respuestas.pregunta1 === "" || respuestas.pregunta2 === "" || 
+          respuestas.pregunta3 === "" || respuestas.pregunta4 === "" || 
+          respuestas.pregunta5 === "No respondida") {
+        alert("Por favor responde todas las preguntas antes de finalizar.");
+        return;
+      }
+
+      try {
+        // Guardar en Firebase
+        await db.collection("respuestas").add(respuestas);
+        
+        // Mostrar slide final y ocultar navegación
+        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+        document.getElementById('slide-final').classList.add('active');
+        document.getElementById('navigation').style.display = 'none';
+        
+        console.log("Respuestas guardadas correctamente:", respuestas);
+      } catch (error) {
+        console.error("Error al guardar respuestas:", error);
+        alert("Hubo un error al guardar tus respuestas. Por favor intenta nuevamente.");
+      }
+    }
+
+    // Inicializar mostrando el primer slide
+    showSlide(0);
+  </script>
+</body>
+</html>

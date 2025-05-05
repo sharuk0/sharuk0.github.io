@@ -1,0 +1,444 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e5e5f7;
+
+    background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#0c0c17 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #0c0c17 2px, #e5e5f7 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+  }
+ 
+  .cover-container {
+    background-color: #cccccc;
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 60px 30px;
+    margin: 20px;
+  }
+  
+  .cover-container h1 {
+    color: #383737;
+    font-size: 3em;
+    margin-bottom: 60px;
+  }
+  
+  #start-btn {
+    background: #03cee9;
+    color: #fff;
+    font-weight: 500;
+    width: 200px;
+    border: 0;
+    padding: 15px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+  }
+  
+  #start-btn:hover {
+    transform: scale(1.05);
+  }
+
+.name-container {
+    background-color: #cccccc;
+    width: 95%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 60px 30px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .name-container h2 {
+    color: #383737;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  #user-name {
+    width: 80%;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: 2px solid #1368ce;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  #submit-name {
+    background: #03cee9;
+    color: #fff;
+    font-weight: 500;
+    width: 200px;
+    border: 0;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+  }
+  
+  #submit-name:hover {
+    transform: scale(1.05);
+  }
+  .question-container.intro-screen img,
+.question-container.gay-screen img {
+  max-width: 300px;
+  max-height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Feedback visual para respuestas seleccionadas */
+/* Estilos para selección */
+.btn.selected {
+    box-shadow: 0 0 0 3px #03cee9;
+    transform: scale(1.05);
+    transition: all 0.2s;
+  }
+  
+  .btn.confirmed {
+    box-shadow: 0 0 0 3px #2fc43f;
+    position: relative;
+  }
+  
+  .btn.confirmed::after {
+    content: "✓";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #2fc43f;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+.btn.selected::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid #ffffff;
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { border-color: #ffffff; }
+  50% { border-color: #03cee9; }
+  100% { border-color: #ffffff; }
+}
+
+/* Estilo para el contenedor de la pregunta "gay" */
+.gay-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.gay-container .btn {
+    width: 200px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.gay-container .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para los botones específicos */
+.gay-container .btn-green {
+    background-color: #2fc43f;
+}
+
+.gay-container .btn-red {
+    background-color: #e91d0e;
+}
+
+/* Posicionamiento para el botón que escapa */
+#answer-buttons {
+  position: relative;
+  min-height: 150px;
+}
+  /* Estilos para preguntas de conexión */
+.connect-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .connection-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .connection-left {
+    flex: 1;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-right: 15px;
+  }
+  
+  .connection-select {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .connection-select:focus {
+    border-color: #03cee9;
+    outline: none;
+  }
+  
+  /* Estilo cuando se selecciona una opción correcta */
+  .connection-select.correct {
+    border-color: #2fc43f;
+    background-color: #e6f7e6;
+  }
+  
+  /* Estilo cuando se selecciona una opción incorrecta */
+  .connection-select.incorrect {
+    border-color: #e91d0e;
+    background-color: #ffebee;
+  }
+  .question-container {
+    background-color: #cccccc;
+    width: 95%;
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 2rem;
+    padding: 40px 30px;
+    margin: 20px;
+  }
+  .question-container img {
+    max-width: 250px;
+    max-height: 150px;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  /* Espaciado ajustado para botones */
+  .btn {
+    margin: 8px;
+    padding: 12px;
+  }
+  
+  /* Contenedor más compacto para preguntas "gay" */
+  .gay-question-container {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  #question-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question h2 {
+    color: #383737;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  
+  .answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .btn {
+    height: 140px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    position: relative;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Colores estilo Kahoot */
+  .btn-red { background-color: #e91d0e; }
+  .btn-blue { background-color: #1368ce; }
+  .btn-yellow { background-color: #eccf00;  }
+  .btn-green { background-color: #2fc43f; }
+  
+  /* Formas (opcionales como en Kahoot) */
+  .kahoot-btn::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+  }
+  
+  .btn-red::before {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  .btn-blue::before {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  .btn-yellow::before {
+    clip-path: circle(50% at 50% 50%);
+  }
+  
+  .btn-green::before {
+    clip-path: inset(0 0 0 0); 
+  }
+  /* Estilos para los nuevos botones */
+.btn-green {
+    background-color: #2fc43f !important;
+  }
+  
+  .btn-red {
+    background-color: #e91d0e !important;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  /* Contenedor de respuestas para posición relativa */
+  #answer-buttons {
+    position: relative;
+    min-height: 200px;
+  }
+  
+  /* Estilos para pantallas especiales */
+  .question-container.intro-screen,
+  .question-container.gay-screen {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .question-container.intro-screen h2,
+  .question-container.gay-screen h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  #next-btn {
+    background: #03cee9;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+
+    transition: all 0.3s ease;
+  }
+
+  #question-text.finished {
+    font-size: 2.5em;
+    color: #2fc43f;
+    margin-bottom: 40px;
+  }
+  #next-btn[data-action="reset"] {
+    background: #ff6b6b;
+  }
+
+
+
+  /* Estilos de resultados */
+.score-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .score-display {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .score {
+    color: #2fc43f;
+  }
+  
+  .max-score {
+    color: #1368ce;
+  }
+  
+  .score-separator {
+    color: #333;
+    margin: 0 5px;
+  }
+  
+  .score-percentage {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e91d0e;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Estilos para las conexiones */
+  .connection-select.correct {
+    border-color: #2fc43f;
+    background-color: #e6f7e6;
+  }
+  
+  .connection-select.incorrect {
+    border-color: #e91d0e;
+    background-color: #ffebee;
+  }
