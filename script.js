@@ -97,18 +97,7 @@ const questions = [
           { text: "▲ Sintagma nominal", correct: false }
         ],
       },
-      {
-        type: "connect",
-        question: "Conecta cada sintagma con su función habitual dentro de una oración",
-        pointsPerConnection: 2,
-        connections: [
-          { left: "Sintagma nominal", right: "Sujeto o complemento directo" },
-          { left: "Sintagma verbal", right: "Predicado" },
-          { left: "Sintagma preposicional", right: "Complemento circunstancial o régimen" },
-          { left: "Sintagma adjetival", right: "Modificador del sustantivo" }
-        ],
-        shuffleOptions: true
-      }
+      
   ];
   
   // Elementos del DOM
@@ -164,8 +153,6 @@ const questions = [
         showGayQuestion(currentQuestion);
       } else if (currentQuestion.type === "gay-response") {
         showGayResponse(currentQuestion);
-      } else if (currentQuestion.type === "connect") {
-        showConnectQuestion(currentQuestion);
       } else {
       // Mostrar selección previa si existe
     if (currentQuestion.userAnswer) {
