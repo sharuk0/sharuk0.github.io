@@ -1,19 +1,66 @@
-<h1>Hello, I am <span id="name"></span></h1>
-<h2>I am a <span id="roles"></span></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gustavo's Journal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #EFDCB4; /* Fondo */
+      color: #212A2C;            /* Texto */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  new Typed("#name", {
-    strings: ["Gustavo", "Sharuko"],
-    typeSpeed: 70,
-    backSpeed: 50,
-    loop: true
-  });
+    h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+    }
 
-  new Typed("#roles", {
-    strings: ["Mathematics Student", "Computer Science Enthusiast","Cybersecurity Amateur"],
-    typeSpeed: 60,
-    backSpeed: 40,
-    loop: true
-  });
-</script>
+    h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin: 0.5rem 0;
+    }
+
+    section {
+      max-width: 800px;
+      padding: 4rem 2rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <h1>Hello, I am <span id="name"></span></h1>
+  <h2>I am a <span id="roles"></span></h2>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed("#name", {
+      strings: ["Gustavo", "Sharuko"],
+      typeSpeed: 70,
+      backSpeed: 50,
+      loop: true
+    });
+
+    new Typed("#roles", {
+      strings: [
+        "Mathematics Student",
+        "Computer Science Enthusiast",
+        "Cybersecurity Amateur"
+      ],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+</body>
+</html>
