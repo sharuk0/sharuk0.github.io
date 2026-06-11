@@ -6,7 +6,7 @@ title: Home
 <section class="intro">
   <h1>Hi, I’m Sharuko.</h1>
   <p class="lead">
-    Computer Science student, pentester and CTF player. I use this space to publish
+    Mathematics student, pentester and CTF player. I use this space to publish
     notes, writeups and research ideas about cybersecurity, applied cryptography,
     CTFs, infrastructure and mathematics.
   </p>
