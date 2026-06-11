@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+    <span class="sep">›</span>
+    <span>{{ page.title }}</span>
+  </nav>
+
+  <header class="article-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="description">{{ page.description }}</p>{% endif %}
+    <span class="post-meta">
+      {{ page.date | date: "%b %-d, %Y" }}
+      {% for tag in page.tags %}<span class="dot">·</span><a href="{{ '/blog/' | relative_url }}#{{ tag }}">{{ tag }}</a>{% endfor %}
+    </span>
+  </header>
+
+  <hr class="rule">
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <a class="back-link" href="{{ '/blog/' | relative_url }}">← Back to blog</a>
+</article>

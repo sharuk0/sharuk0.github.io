@@ -1,0 +1,54 @@
+# ============================================================
+#  Configuración del sitio — Sharuko
+#  Edita los valores marcados con  <-- CAMBIA
+# ============================================================
+title: Sharuko
+tagline: "Computer Science student, pentester and CTF player."
+description: >-
+  Notes, writeups and research about cybersecurity, applied cryptography,
+  CTFs, mathematics and infrastructure.
+author: Sharuko
+lang: en
+
+# Repo de usuario -> baseurl vacío, url con tu usuario
+url: "https://sharuk0.github.io"
+baseurl: ""
+
+# Enlaces sociales (se usan en el header y el about)
+github_username: sharuk0
+linkedin_url: "https://www.linkedin.com/in/USERNAME"   # <-- CAMBIA
+email: "correo@ejemplo.com"                            # <-- CAMBIA
+
+# Markdown / resaltado de código
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  # math_engine: null -> kramdown NO procesa $...$ ni $$...$$;
+  # los delimitadores llegan intactos al HTML y los renderiza MathJax 3.
+  math_engine: null
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+# URLs limpias para posts: /blog/titulo/
+permalink: /blog/:title/
+
+# Plugins permitidos en GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Layout por defecto para todos los posts
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
