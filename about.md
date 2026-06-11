@@ -34,9 +34,9 @@ tricks to applied security tooling — and publish the ones worth sharing.</p>
 <h2>Contact</h2>
 
 <ul class="contact-list">
-  <li><a href="https://github.com/{{ site.sharuk0 }}" rel="me noopener" target="_blank">GitHub</a></li>
-  <li><a href="{{ https://www.linkedin.com/in/sharuk0/ }}" rel="me noopener" target="_blank">LinkedIn</a></li>
-  <li><a href="mailto:{{ sharuko.gmail.com }}">{{ site.email }}</a></li>
+  <li><a href="https://github.com/sharuk0" rel="me noopener noreferrer" target="_blank">GitHub</a></li>
+  <li><a href="https://www.linkedin.com/in/sharuk0/" rel="me noopener noreferrer" target="_blank">LinkedIn</a></li>
+  <li><a href="mailto:{{ sharuko.g@gmail.com }}">{{ site.email }}</a></li>
 </ul>
 
 </div>

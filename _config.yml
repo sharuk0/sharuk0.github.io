@@ -3,7 +3,7 @@
 #  Edita los valores marcados con  <-- CAMBIA
 # ============================================================
 title: Sharuko
-tagline: "Computer Science student, pentester and CTF player."
+tagline: "Mathematics student, pentester and CTF player."
 description: >-
   Notes, writeups and research about cybersecurity, applied cryptography,
   CTFs, mathematics and infrastructure.
@@ -16,8 +16,8 @@ baseurl: ""
 
 # Enlaces sociales (se usan en el header y el about)
 github_username: sharuk0
-linkedin_url: "https://www.linkedin.com/in/USERNAME"   # <-- CAMBIA
-email: "correo@ejemplo.com"                            # <-- CAMBIA
+linkedin_url: "https://www.linkedin.com/in/sharuk0"  
+email: "sharuko.g@gmail.com"                          
 
 # Markdown / resaltado de código
 markdown: kramdown
