@@ -33,10 +33,12 @@ from itertools import permutations
 
 flag = b'flag{REDACTED}'
 assert len(flag) == 26
-
+# Normal stuff in crypto ctfs
 f_x = int.from_bytes(flag, "big")
 BITS = 1024
 M = random_prime(2**(BITS+2), lbound=2**(BITS+1))
+
+#This part was the one that particularly made me lockin because I knew it was about to get real
 
 def compose(foo_l):
     x = f_x
@@ -46,7 +48,7 @@ def compose(foo_l):
             case 'c': x = cos(x)
             case 't': x = tan(x)
     return x.n(BITS)
-
+# Just a permutation of tsc
 def kaledioscope():
     ll = list(permutations('tsc', 3))
     n = len(ll)
@@ -60,7 +62,7 @@ def kaledioscope():
     S = sum([x*w for x,w in zip(funsies, importance)])
 
     return S % M
-
+# This part had a commentary that said that n=8*3 was a reference (I didnt got it)
 def fraud(n=8*3):
     S_i = []
     for _ in range(n):
