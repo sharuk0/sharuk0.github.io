@@ -6,13 +6,10 @@ date: 2026-06-15
 tags: [crypto, math, LLL, lattices, sage, cool-shit]
 ---
 
-This problem was somewhat a pain in the ass.
-
-Not because the final idea was impossible to understand, but because before reaching the nice part, you first had to reverse a weird Sage script, understand what was actually being leaked, recover hidden subset sums, invert trigonometric compositions, and then solve a precision-sensitive lattice problem.
-
-So yeah.
-
-Very normal crypto challenge behavior.
+> This problem was somewhat a pain in the ass.
+> Not because the final idea was impossible to understand, but because before reaching the nice part, you first had to reverse a weird Sage script, understand what was actually being leaked, recover hidden subset sums, invert trigonometric compositions, and then solve a precision-sensitive lattice problem.
+> So yeah.
+> Very normal crypto challenge behavior.
 
 The challenge description was:
 
@@ -782,7 +779,8 @@ flag{m4pl3_is_g0473d_b7w!}
 ```
 
 > The final flag is a joke about Maple being gated. Which is funny, because this challenge made me use Sage, LLL, trigonometric branch enumeration, and precision debugging just to recover a string. At the end, the challenge name was actually pretty accurate.
-> A kaleidoscope: six trig functions, shuffled subset sums, periodic ambiguity, and lattices reflecting the same secret from different angles.
+
+A kaleidoscope: six trig functions, shuffled subset sums, periodic ambiguity, and lattices reflecting the same secret from different angles.
 
 ```text
 Beauty is in the eyes of the beholder.
