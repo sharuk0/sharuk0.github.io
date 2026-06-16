@@ -781,14 +781,11 @@ flag = x.to_bytes(26, "big")
 flag{m4pl3_is_g0473d_b7w!}
 ```
 
-The final flag is a joke about Maple being gated.
+> The final flag is a joke about Maple being gated. Which is funny, because this challenge made me use Sage, LLL, trigonometric branch enumeration, and precision debugging just to recover a string. At the end, the challenge name was actually pretty accurate.
+> A kaleidoscope: six trig functions, shuffled subset sums, periodic ambiguity, and lattices reflecting the same secret from different angles.
 
-Which is funny, because this challenge made me use Sage, LLL, trigonometric branch enumeration, and precision debugging just to recover a string.
-
-At the end, the challenge name was actually pretty accurate.
-
-A kaleidoscope: six trig functions, shuffled subset sums, periodic ambiguity, and lattices reflecting the same secret from different angles.
-
+```text
 Beauty is in the eyes of the beholder.
 
 But the flag is in the kernel.
+```
