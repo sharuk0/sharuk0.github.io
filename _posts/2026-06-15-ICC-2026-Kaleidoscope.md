@@ -61,7 +61,8 @@ def kaledioscope():
     S = sum([x*w for x,w in zip(funsies, importance)])
 
     return S % M
-# This part had a commentary that said that n=8*3 was a reference (I didnt got it)
+# This part had a commentary that said that n=8*3 was a reference 
+# (I didnt got it)
 def fraud(n=8*3):
     S_i = []
     for _ in range(n):
