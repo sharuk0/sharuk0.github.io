@@ -1,11 +1,10 @@
 ---
-
 layout: post
 title: "ICC 2026 - Kaleidoscope"
 description: "A writeup for the Kaleidoscope crypto challenge from ICC 2026"
 date: 2026-06-15
 tags: [crypto, math, LLL, lattices, sage, cool-shit]
-----------------------------------------------------
+---
 
 This problem was somewhat a pain in the ass.
 
