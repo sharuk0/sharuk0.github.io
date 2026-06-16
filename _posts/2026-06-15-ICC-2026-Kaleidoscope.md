@@ -8,9 +8,10 @@ tags: [crypto, math, LLL, lattices, sage, cool-shit]
 
 > This problem was somewhat a pain in the ass.
 > Not because the final idea was impossible to understand, but because before reaching the nice part, you first had to reverse a weird Sage script, understand what was actually being leaked, recover hidden subset sums, invert trigonometric compositions, and then solve a precision-sensitive lattice problem.
-> So yeah.
-> Very normal crypto challenge behavior.
-
+```text
+So yeah.
+Very normal crypto challenge behavior.
+```
 The challenge description was:
 
 $$
