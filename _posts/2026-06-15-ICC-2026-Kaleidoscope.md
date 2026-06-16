@@ -73,9 +73,7 @@ At the start I thought:
 
 > Maybe I just need to reverse the trig functions.
 
-This was wrong.
-
-Painfully wrong.
+This was wrong. Painfully wrong.
 
 Trying to apply inverse trig functions directly to the public outputs is like trying to decrypt AES by staring at the ciphertext with enough emotional intensity. It feels productive for about 15 minutes and then Sage gives you binary soup.
 
@@ -683,9 +681,7 @@ subset sums  →  orthogonal lattice
              →  flag
 ```
 
-Very elegant.
-
-Very cursed.
+Very elegant. Very cursed. (The perfect formula for a mathemathitians nirvana)
 
 ## Final implementation notes
 
