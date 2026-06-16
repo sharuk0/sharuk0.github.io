@@ -12,6 +12,7 @@ tags: [crypto, math, LLL, lattices, sage, cool-shit]
 So yeah.
 Very normal crypto challenge behavior.
 ```
+
 The challenge description was:
 
 $$
