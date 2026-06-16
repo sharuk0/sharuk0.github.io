@@ -36,7 +36,8 @@ f_x = int.from_bytes(flag, "big")
 BITS = 1024
 M = random_prime(2**(BITS+2), lbound=2**(BITS+1))
 
-#This part was the one that particularly made me lockin because I knew it was about to get real
+# This part was the one that particularly made me lockin because I knew it was 
+# about to get real
 
 def compose(foo_l):
     x = f_x
